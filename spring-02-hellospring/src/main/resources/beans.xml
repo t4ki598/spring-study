@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+        使用spring创建对象，在Spring中这些都称为bean
+        对象属性是由Spring容器设置的，通过property标签控制
+
+        上述过程叫控制反转。
+    -->
+    <bean id="hello" class="com.ldr.pojo.Hello">
+        <property name="name" value="spring"/>
+    </bean>
+
+</beans>

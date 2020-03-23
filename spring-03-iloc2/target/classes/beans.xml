@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用无参构造创建对象，默认-->
+    <bean id="user" class="com.ldr.pojo.User">
+        <property name="name" value="ldr"/>
+    </bean>
+
+    <!--下标赋值-->
+    <bean id="example" class="com.ldr.pojo.ExampleBean">
+        <constructor-arg index="0" value="20"/>
+        <constructor-arg index="1" value="30"/>
+    </bean>
+
+    <!--别名-->
+    <alias name="example" alias="a"/>
+
+    <!--name也是别名，而且name可以同时取多个别名,中间可以用空格获取逗号分隔-->
+    <!--通过类型赋值-->
+    <bean id="example2" class="com.ldr.pojo.ExampleBean" name="e1 e2, e3">
+        <constructor-arg type="int" value="30"/>
+        <constructor-arg type="java.lang.String" value="40"/>
+    </bean>
+
+</beans>

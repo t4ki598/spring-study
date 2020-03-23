@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--P、C命名不能直接使用，必须导入XML约束。-->
+
+    <!--P命名空间注入，可以直接注入属性的值：property-->
+    <bean id="user" class="com.ldr.pojo.User" p:id="123" p:name="ldr"/>
+
+
+    <!--C命名空间注入，必须有有参构造器construct-->
+    <!--单例模式（Spring默认机制）：共享一个对象-->
+    <bean id="user1" class="com.ldr.pojo.User" c:id="234" c:name="t4ki" scope="singleton"/>
+
+    <!--原型模式：每次从容器中get的时候都会产生新的对象-->
+    <bean id="user2" class="com.ldr.pojo.User" c:id="234" c:name="t4ki" scope="prototype"/>
+
+</beans>
